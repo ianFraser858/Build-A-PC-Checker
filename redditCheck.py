@@ -5,6 +5,7 @@ from twilio.rest import Client
 
 from local_settings import *
 
+print('success!')
 
 reddit = praw.Reddit(client_id=client_id,
                      client_secret=client_secret,
@@ -25,4 +26,5 @@ for submission in subreddit.new(limit=5):
                                         '\n\n' +
                                         submission.url)
 
-print('success!')
+
+print('success1!')
