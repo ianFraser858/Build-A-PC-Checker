@@ -1,6 +1,6 @@
 # r/buildapcsales GPU check
  
- Uses [PRAW](https://praw.readthedocs.io/en/latest/) to scrap the newest 3 posts from [r/buildapcsales](reddit.com/r/buildapcsales), look for any that are for a 2060, 2070, or 2080 and then take a guess as the price. 
+ Uses [PRAW](https://praw.readthedocs.io/en/latest/) to scrap the newest 3 posts from [r/buildapcsales](www.reddit.com/r/buildapcsales), look for any that are for a 2060, 2070, or 2080 and then take a guess as the price. 
  
  The script will text my number if the price looks like it falls within a certain range using [Twilio](https://www.twilio.com/).
  
