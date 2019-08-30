@@ -25,3 +25,4 @@ for submission in subreddit.new(limit=5):
                                         '\n\n' +
                                         submission.url)
 
+print('success!')
