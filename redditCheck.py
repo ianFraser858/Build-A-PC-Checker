@@ -1,5 +1,6 @@
 import praw
 import re
+from datetime import datetime, timedelta
 from twilio.rest import Client
 
 
@@ -15,7 +16,9 @@ sought_gpu = ['2070', '2060', '2080']
 
 for submission in subreddit.new(limit=3):
     title = submission.title
-    if(title[title.find('[')+1: title.find(']')]) == 'GPU' and any(entry in title for entry in sought_gpu):
+    if(title[title.find('[')+1: title.find(']')]) == 'GPU' \
+            and any(entry in title for entry in sought_gpu)\
+            and (datetime.utcnow() - datetime.utcfromtimestamp(submission.created_utc)).total_seconds() < 1800:
         all_nums = re.findall(r"\d*\.\d+|\d+", title)
         filtered_nums = [entry for entry in all_nums if 250 < float(entry) < 450]
         if filtered_nums:
